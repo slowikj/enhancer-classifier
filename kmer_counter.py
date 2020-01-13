@@ -4,9 +4,6 @@ from Bio.Seq import Seq
 def reverse_complement(current_kmer):
     return Seq(current_kmer).reverse_complement()
 
-#1. liczymy dla framow bez zadnej N: dla każdej ramki wychodzi mi jakas predykcja
-# z tych predykcji liczymy srednia predykcje
-# dla framow z N liczymy srednia predykcje
 
 class KmerCounter:
 
@@ -49,7 +46,7 @@ class KmerCounter:
 
     def __generate_all_kmers_rec(self, k, current_kmer, kmer_dict):
         if len(current_kmer) == k:
-            if not(current_kmer in kmer_dict or reverse_complement(current_kmer) in kmer_dict):
+            if not (current_kmer in kmer_dict or reverse_complement(current_kmer) in kmer_dict):
                 kmer_dict[current_kmer] = 0
             return
 

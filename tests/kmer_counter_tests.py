@@ -26,15 +26,15 @@ class MyTestCase(unittest.TestCase):
         kmer = "ACTAA"
         res = KmerCounter(kmer).get_kmer_frequencies(k)
         self.assertEqual(len(res), 136)
-        self.assertEqual(res["ACTA"], 1/len(kmer))
-        self.assertEqual(res["CTAA"], 1/len(kmer))
+        self.assertEqual(res["ACTA"], 1 / len(kmer))
+        self.assertEqual(res["CTAA"], 1 / len(kmer))
 
     def test_kmer_frequencies_sorted_list(self):
         k = 4
         kmer = "ACTAA"
         res = KmerCounter(kmer).get_kmer_frequencies_sorted_list(k)
         self.assertEqual(len(res), 136)
-        self.assertTrue(all(res[i][0] < res[i+1][0] for i in range(len(res) - 1)))  # check if sorted
+        self.assertTrue(all(res[i][0] < res[i + 1][0] for i in range(len(res) - 1)))  # check if sorted
 
 
 if __name__ == '__main__':
