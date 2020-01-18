@@ -1,8 +1,4 @@
-from Bio.Seq import Seq
-
-
-def reverse_complement(current_kmer):
-    return Seq(current_kmer).reverse_complement()
+from Bio.Seq import reverse_complement
 
 
 class KmerCounter:
@@ -25,11 +21,12 @@ class KmerCounter:
 
     def get_kmer_counts(self, k):
         kmers = dict()
+        self.__update_dict_with_all_kmers(k, kmers)
+
         for i in range(len(self.seq) - k + 1):
             current_kmer = self.seq[i:(i + k)]
             self.__insert_kmer(current_kmer, kmers)
 
-        self.__update_dict_with_all_kmers(k, kmers)
         return kmers
 
     def __insert_kmer(self, current_kmer, kmers):
