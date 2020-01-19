@@ -14,7 +14,7 @@ step = 750
 
 def get_probabilities_for_1_list(valid_frames, invalid_frames, y_test_valid_proba):
     prob_for_1 = [0] * (len(valid_frames) + len(invalid_frames))
-    
+
     for valid_frame_ind in range(len(valid_frames)):
         prob_for_1_ind = int(valid_frames[valid_frame_ind].begin / step)
         prob_for_1[prob_for_1_ind] = y_test_valid_proba[valid_frame_ind][1]
@@ -35,7 +35,7 @@ def save_as_wig(filename, probabilities):
     indices = indices.reshape(new_shape)
     probabilities = probabilities.reshape(new_shape)
     data = np.concatenate((indices, probabilities), axis=1)
-    np.savetxt(filename, data, fmt=["%d", "%.2f"])
+    np.savetxt(filename, data, fmt=["%d", "%.5f"])
 
 
 if __name__ == "__main__":
