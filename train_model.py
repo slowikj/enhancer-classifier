@@ -1,7 +1,7 @@
 from sklearn.ensemble import RandomForestClassifier
 
 
-def train(features, labels):
+def train(X, y):
     clf = RandomForestClassifier(max_depth=5, random_state=123)
-    clf.fit(features, labels)
+    clf.fit(X, y)
     return clf
