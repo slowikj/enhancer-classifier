@@ -1,4 +1,3 @@
-from Bio.Seq import reverse_complement
 import numpy as np
 
 from kmer_space import KMerSpace
@@ -9,7 +8,7 @@ class KMerCounter:
     def __init__(self, kmer_space: KMerSpace):
         self.kmer_space = kmer_space
 
-    def get_frequences_numpy(self, seq):
+    def get_frequencies_numpy(self, seq):
         frequencies = self.get_frequencies(seq)
         return np.array(list(map(lambda x: x[1], frequencies)))
 
@@ -18,8 +17,6 @@ class KMerCounter:
         return map(lambda x: (x[0], x[1] / len(seq)), counts)
 
     def count(self, seq):
-        seq = seq.upper()
-
         k = self.kmer_space.k
         for i in range(len(seq) - k + 1):
             kmer = seq[i:(i + k)]
