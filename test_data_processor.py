@@ -10,8 +10,8 @@ def get_test_data_frames(file_path, frame_length, step):
 
 def split_frames_by_is_valid(frames):
     return (
-        filter(lambda f: f.is_valid, frames),
-        filter(lambda f: not f.is_valid, frames)
+        list(filter(lambda f: f.is_valid, frames)),
+        list(filter(lambda f: not f.is_valid, frames))
     )
 
 
