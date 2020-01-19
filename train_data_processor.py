@@ -28,13 +28,13 @@ def read_train_sequences(file_path):
     return sequences
 
 
-def create_features_for_seq(seq, alphabet, k):
-    return KMerCounter(KMerSpace(alphabet=alphabet, k=k)).get_frequencies_numpy(seq=seq)
-
-
 def create_features(sequences, alphabet, k):
     s = tuple((__to_horizontal_vector(create_features_for_seq(seq, alphabet, k)) for seq in sequences))
     return np.concatenate(s, axis=0)
+
+
+def create_features_for_seq(seq, alphabet, k):
+    return KMerCounter(KMerSpace(alphabet=alphabet, k=k)).get_frequencies_numpy(seq=seq)
 
 
 def __to_horizontal_vector(v):
