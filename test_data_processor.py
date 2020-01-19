@@ -1,9 +1,4 @@
-class Frame:
-
-    def __init__(self, sequence, begin):
-        self.sequence = sequence.upper()
-        self.is_valid = all(map(lambda c: c != "N", self.sequence))
-        self.begin = begin
+from frame import Frame
 
 
 def get_test_data_frames(file_path, frame_length, step):

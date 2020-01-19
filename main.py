@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     test_frames = get_test_data_frames(test_filename, frame_length=frame_length, step=step)
     valid_frames, invalid_frames = split_frames_by_is_valid(test_frames)
-    X_test = create_features(map(lambda frame: frame.sequence, valid_frames),
+    X_test = create_features(valid_frames,
                              alphabet=alphabet,
                              k=k)
     y_test_proba = clf.predict_proba(X_test)
