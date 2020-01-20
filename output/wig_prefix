@@ -1,2 +1,1 @@
-track type=wiggle_0 name="fixedStep" description="enhancer classification" visibility=full autoScale=off vieLimits=0.0:1.0 color=30,120,255 yLineMark=11.76 yLineOnOff=on priority=10
-fixedStep chrom=chr21 span=1500 step=750
+track type=wiggle_0 name="fixedStep" description="enhancer classification" fixedStep chrom=chr21 span=1500 step=750
