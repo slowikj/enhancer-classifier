@@ -1,1 +1,1 @@
-track type=wiggle_0 name="fixedStep" description="enhancer classification" fixedStep chrom=chr21 span=1500 step=750
+variableStep chrom=chr21 span=1500  visibility=full autoScale=on
