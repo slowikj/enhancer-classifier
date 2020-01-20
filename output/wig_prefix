@@ -1,1 +1,2 @@
-variableStep chrom=chr21 span=1500  visibility=full autoScale=on
+track type=wiggle_0 name="db=vista tissue=both histmods= kmers=4mers chrom=chr21.id" description="enhancers prediction"  visibility=full autoScale=off vieLimits=0.0:1.0 color=50,150,255 yLineMark=11.76 yLineOnOff=on priority=10
+variableStep chrom=chr21 span=1500
